@@ -5,36 +5,36 @@ We provide 4 datasets for Thai text classification in different styles, objectiv
 
 ## Dataset Description
 
-| Datasets                                                    | Style    | Objective | Labels | Size | 
-|-------------------------------------------------------------|----------|-----------|--------|------|
-| [wongnai-corpus](https://github.com/wongnai/wongnai-corpus) | Informal | Sentiment | 5      | 40k  |(https://github.com/cstorm125/thai2fit/blob/master/notebook/lstm_wongnai.ipynb)               |
-| [prachathai-67k](https://github.com/PyThaiNLP/prachathai-67k): body_text | Formal   | Topic     | 12    | 67k  |
-| [wisesight-sentiment](https://github.com/PyThaiNLP/wisesight-sentiment)  | Informal | Sentiment | 4   | 28k  | 
-| [truevoice-intent](https://github.com/PyThaiNLP/truevoice-intent): destination  | Informal | Intent    | 7    | 16k  |
+| Datasets                                                                       | Style    | Objective | Labels | Size |
+|--------------------------------------------------------------------------------|----------|-----------|--------|------|
+| [wongnai-corpus](https://github.com/wongnai/wongnai-corpus)                    | Informal | Sentiment | 5      | 40k  |
+| [prachathai-67k](https://github.com/PyThaiNLP/prachathai-67k): body_text       | Formal   | Topic     | 12     | 67k  |
+| [wisesight-sentiment](https://github.com/PyThaiNLP/wisesight-sentiment)        | Informal | Sentiment | 4      | 28k  |
+| [truevoice-intent](https://github.com/PyThaiNLP/truevoice-intent): destination | Informal | Intent    | 7      | 16k  |
 
 ## [wongnai-corpus](https://github.com/wongnai/wongnai-corpus)
 
 Performance of [wongnai-corpus](https://github.com/wongnai/wongnai-corpus) is based on the test set of [Wongnai Challenge: Review Rating Prediction](https://www.kaggle.com/account/login?ReturnUrl=%2Ft%2F5db04b4da3264e1091d83463b110153b). Codes can be run to confirm performance at this [notebook](https://github.com/cstorm125/thai2fit/blob/master/wongnai_cls/classification.ipynb).
 
-| model     | Public Micro-F1 | Private Micro-F1 | 
-|-----------|-----------------|------------------|
-| [**ULMFit Knight**](https://www.facebook.com/photo.php?fbid=10215789035573261&set=pcb.795048317543327&type=3&theater&ifg=1) | **0.61109** | **0.62580** |
-| [ULMFit](https://github.com/cstorm125/thai2fit/) | 0.59313          | 0.60322           |
-| fastText | 0.5145          | 0.5109           |
-| LinearSVC | 0.5022          | 0.4976           |
-| Kaggle Score | 0.59139          | 0.58139          |
-| [BERT](https://github.com/ThAIKeras/bert) | 0.56612 | 0.57057 |
+| model                                                                                                                       | Public Micro-F1 | Private Micro-F1 |
+|-----------------------------------------------------------------------------------------------------------------------------|-----------------|------------------|
+| [**ULMFit Knight**](https://www.facebook.com/photo.php?fbid=10215789035573261&set=pcb.795048317543327&type=3&theater&ifg=1) | **0.61109**     | **0.62580**      |
+| [ULMFit](https://github.com/cstorm125/thai2fit/)                                                                            | 0.59313         | 0.60322          |
+| Kaggle Score                                                                                                                | 0.59139         | 0.58139          |
+| [BERT](https://github.com/ThAIKeras/bert)                                                                                   | 0.56612         | 0.57057          |
+| fastText                                                                                                                    | 0.5145          | 0.5109           |
+| LinearSVC                                                                                                                   | 0.5022          | 0.4976           |
 
 
 ## [prachathai-67k](https://github.com/PyThaiNLP/prachathai-67k): body_text
 
 We benchmark [prachathai-67k](https://github.com/PyThaiNLP/prachathai-67k) by using `body_text` as text features and construct a 12-label multi-label classification. The performance is measured by macro-averaged accuracy and F1 score. Codes can be run to  confirm performance at this [notebook](https://github.com/PyThaiNLP/prachathai-67k/blob/master/classification.ipynb). We also provide performance metrics by class in the notebook.
 
-| Model     | Macro-accuracy | Macro-F1 |
-|-----------|----------------|----------|
-| fastText  | 0.9302         | 0.5529   |
-| LinearSVC | 0.513277       | 0.552801 |
-| **ULMFit**    | **0.948737**       | **0.744875**	 |
+| Model      | Macro-accuracy | Macro-F1     |
+|------------|----------------|--------------|
+| **ULMFit** | **0.948737**   | **0.744875** |
+| fastText   | 0.9302         | 0.5529       |
+| LinearSVC  | 0.513277       | 0.552801     |
 
 ## [wisesight-sentiment](https://github.com/PyThaiNLP/wisesight-sentiment)
 
@@ -42,24 +42,24 @@ Performance of [wisesight-sentiment](https://github.com/PyThaiNLP/wisesight-sent
 
 **Disclaimer** Note that the labels are obtained manually and are prone to errors so if you are planning to apply the models in the benchmark for real-world applications, be sure to benchmark it with **your own dataset**.
 
-| Model               | Public Accuracy | Private Accuracy |
-|---------------------|-----------------|------------------|
-| Logistic Regression | 0.72781         | 0.7499           |
-| FastText            | 0.63144         | 0.6131           |
-| ULMFit              | 0.71259         | 0.74194          |
-| ULMFit Semi-supervised    | 0.73119     | 0.75859      |
-| **[ULMFit Semi-supervised Repeated One Time](https://github.com/PyThaiNLP/wisesight-sentiment/blob/master/competition.ipynb)**    | **0.73372**     | **0.75968**      |
+| Model                                                                                                                          | Public Accuracy | Private Accuracy |
+|--------------------------------------------------------------------------------------------------------------------------------|-----------------|------------------|
+| **[ULMFit Semi-supervised Repeated One Time](https://github.com/PyThaiNLP/wisesight-sentiment/blob/master/competition.ipynb)** | **0.73372**     | **0.75968**      |
+| ULMFit Semi-supervised                                                                                                         | 0.73119         | 0.75859          |
+| Logistic Regression                                                                                                            | 0.72781         | 0.7499           |
+| ULMFit                                                                                                                         | 0.71259         | 0.74194          |
+| FastText                                                                                                                       | 0.63144         | 0.6131           |
 
 ## [truevoice-intent](https://github.com/PyThaiNLP/truevoice-intent): destination
 
 We benchmark [truevoice-intent](https://github.com/PyThaiNLP/truevoice-intent) by using `destination` as target and construct a 7-class multi-class classification. The performance is measured by micro-averaged accuracy and F1 score. Codes can be run to  confirm performance at this [notebook](https://github.com/PyThaiNLP/truevoice-intent/blob/master/classification.ipynb). We also provide performance metrics by class in the notebook.
 
-| model     | accuracy | micro-F1 |
-|-----------|----------|----------|
-| fastText  | 0.384116 | 0.384116 |
-| LinearSVC-Tfidf | 0.307876 | 0.327565 |
-| **[LinearSVC-CountVectorizer](https://drive.google.com/drive/folders/1twZ2euWR6QE5LNzVqmftKSA0tQCNbZnl?fbclid=IwAR1XeRwF0Pk9LtW9p9LaK5az7ZEYRtuApJxKwsiggL-XA0K3z6NUqcdMJT0)** | **0.902349** | **0.902349**
-| ULMFit    | 0.834981  | 0.834981 |
+| model                                                                                                                                                                          | accuracy     | micro-F1     |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|--------------|
+| **[LinearSVC-CountVectorizer](https://drive.google.com/drive/folders/1twZ2euWR6QE5LNzVqmftKSA0tQCNbZnl?fbclid=IwAR1XeRwF0Pk9LtW9p9LaK5az7ZEYRtuApJxKwsiggL-XA0K3z6NUqcdMJT0)** | **0.902349** | **0.902349** |
+| ULMFit                                                                                                                                                                         | 0.834981     | 0.834981     |
+| fastText                                                                                                                                                                       | 0.384116     | 0.384116     |
+| LinearSVC-Tfidf                                                                                                                                                                | 0.307876     | 0.327565     |
 
 ## Special Thanks
 
